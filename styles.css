@@ -13,7 +13,6 @@
     --text-color: #1e293b;
     --text-light: #64748b;
     --border-color: #e2e8f0;
-    --accent-color: #3b82f6;
     --transition-speed: 100ms;
 }
 
@@ -26,6 +25,10 @@ body {
 
 a {
     color: var(--primary-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
 
 .header {
@@ -153,13 +156,7 @@ a {
 
 .person-info .email {
     font-size: 0.75rem;
-    color: var(--accent-color);
-    text-decoration: none;
     word-break: break-all;
-}
-
-.person-info .email:hover {
-    text-decoration: underline;
 }
 
 .main-content {
@@ -374,6 +371,7 @@ a {
     background: var(--primary-alt);
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    text-decoration: none;
 }
 
 .registration-cta .note {

@@ -29,7 +29,7 @@ a {
 }
 
 .header {
-    background: var(--primary-color);
+    background: var(--text-color);
     color: white;
     padding: 3rem 2rem;
     text-align: center;
@@ -69,7 +69,7 @@ a {
     border-top-left-radius: 12px;
     border-bottom-right-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .sidebar-section h2 {
@@ -119,12 +119,12 @@ a {
     border: 1px solid var(--border-color);
     border-top-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    transition: transform var(--transition-speed);
 }
 
 .person-card:hover {
     transform: translateY(-1px);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .person-info {
@@ -177,7 +177,7 @@ a {
     border: 1px solid var(--border-color);
     border-top-left-radius: 12px;
     border-bottom-right-radius: 12px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), -12px 0 0 var(--background-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), -12px 0 0 var(--background-color);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -192,7 +192,7 @@ a {
     font-weight: 500;
     border-radius: 8px;
     cursor: pointer;
-    transition: all var(--transition-speed);
+    transition: background-color var(--transition-speed);
 }
 
 .nav-btn:hover {
@@ -216,27 +216,31 @@ a {
     border-top-left-radius: 12px;
     border-bottom-right-radius: 12px;
     padding: 2rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     display: none;
-    opacity: 0;
 }
 
 .panel.active {
     display: block;
-    opacity: 1;
-    transform: none;
-    transition: opacity var(--transition-speed) linear, transform var(--transition-speed) ease-out;
+}
+
+@keyframes panel-fade-out {
+    from {opacity: 1; transform: translateY(0);}
+    to {opacity: 0; transform: translateY(12px) scaleX(.9);}
+}
+@keyframes panel-fade-in {
+    from {opacity: 0; transform: translateY(-4px);}
+    to {opacity: 1; transform: translateY(0);}
 }
 
 .panel.fade-out {
-    opacity: 0;
-    transform: translateY(12px) scaleX(.9);
-    transition: opacity var(--transition-speed) linear, transform var(--transition-speed) ease-in;
+    display: block;
+    animation: var(--transition-speed) ease-in panel-fade-out forwards;
 }
 
 .panel.fade-in {
     display: block;
-    transform: translateY(-4px);
+    animation: var(--transition-speed) ease-in panel-fade-in forwards;
 }
 
 .panel h2 {

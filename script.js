@@ -16,22 +16,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (activePanel) {
+            activePanel.classList.remove('active');
             activePanel.classList.add('fade-out');
             
             setTimeout(() => {
                 activePanel.classList.remove('active', 'fade-out');
-                activePanel.style.display = 'none';
-                
-                targetPanel.style.display = 'block';
+
                 targetPanel.classList.add('fade-in');
 
-                void targetPanel.offsetWidth;
-
-                targetPanel.classList.add('active');
-                targetPanel.classList.remove('fade-in');
+                setTimeout(() => {
+                    targetPanel.classList.add('active');
+                    targetPanel.classList.remove('fade-in');
+                }, transitionDuration);
             }, transitionDuration);
         } else {
-            targetPanel.style.display = 'block';
             targetPanel.classList.add('active');
         }
 
@@ -60,14 +58,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (initialHash && document.getElementById(initialHash)) {
         panels.forEach(panel => {
             panel.classList.remove('active');
-            panel.style.display = 'none';
         });
         navButtons.forEach(btn => btn.classList.remove('active'));
         
         const targetPanel = document.getElementById(initialHash);
         const targetButton = document.querySelector(`.nav-btn[data-panel="${initialHash}"]`);
-        
-        targetPanel.style.display = 'block';
+
         targetPanel.classList.add('active');
         if (targetButton) {
             targetButton.classList.add('active');

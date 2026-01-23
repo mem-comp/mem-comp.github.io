@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navButtons = document.querySelectorAll('.nav-btn');
     const panels = document.querySelectorAll('.panel');
-    const transitionDuration = 300;
+    const transitionDuration = 100;
 
     function showPanel(panelId, updateHash = true) {
         const targetPanel = document.getElementById(panelId);
@@ -23,15 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 activePanel.style.display = 'none';
                 
                 targetPanel.style.display = 'block';
-                targetPanel.classList.add('active');
-                
-                void targetPanel.offsetWidth;
-                
                 targetPanel.classList.add('fade-in');
-                
-                setTimeout(() => {
-                    targetPanel.classList.remove('fade-in');
-                }, transitionDuration);
+
+                void targetPanel.offsetWidth;
+
+                targetPanel.classList.add('active');
+                targetPanel.classList.remove('fade-in');
             }, transitionDuration);
         } else {
             targetPanel.style.display = 'block';

@@ -41,7 +41,7 @@
             </section>
 
             <section class="sidebar-section">
-                <h2>Organisers</h2>
+                <h2>Organizers</h2>
                 <div class="person-cards">
                     <div class="person-card">
                         <div class="person-info">
@@ -75,7 +75,7 @@
                 <div class="person-cards">
                     <div class="person-card">
                         <div class="person-info">
-                            <h3>Yuan-an Xiao</h3>
+                            <h3>Yuan-An Xiao</h3>
                             <p class="affiliation">Peking University</p>
                             <p class="location">Beijing, China</p>
                         </div>
@@ -93,16 +93,14 @@
             <div class="panels-container">
                 <section id="overview" class="panel active">
                     <h2>Overview</h2>
-                    <p>The <strong>Intelligent Coding Assistant Enhanced with Memory</strong> competition at FSE-AIWare 2026 invites participants to design and evaluate AI coding assistants with persistent memory across development sessions.</p>
+                    <p>The competition of <strong>Intelligent Coding Assistant Enhanced with Memory</strong> at FSE-AIWare 2026 invites participants to design and evaluate AI coding assistants with persistent memory across development sessions.</p>
                     
                     <h3>Motivation</h3>
                     <p>Recent advances in large language models and coding agents have led to powerful tools for programming. Nevertheless, most systems operate in a largely stateless manner, with only short-term conversational context. As a result, they struggle to accumulate knowledge about user preferences, development practices, evolving codebases, and long-term objectives.</p>
                     <p>Memory is increasingly recognized as a missing infrastructure for transforming coding agents from reactive tools into persistent collaborators.</p>
-                    
-                    <h3>Scientific Question</h3>
-                    <p>The competition is centered on the core scientific question: <em>How does persistent memory change the effectiveness and efficiency of AI coding assistants in long-term software development workflows?</em></p>
-                    
+
                     <h3>Goals</h3>
+                    <p>The competition is centered on the core scientific question: <b>How does persistent memory change the effectiveness and efficiency of AI coding assistants in long-term software development workflows?</b></p>
                     <p>The primary goal of this competition is to establish a shared experimental and conceptual framework for studying memory in coding assistants. By having participants design and evaluate memory-augmented systems, the competition seeks to foster innovation in:</p>
                     <ul>
                         <li>Memory architectures</li>
@@ -129,7 +127,7 @@
                     <h2>Participation</h2>
                     
                     <h3>Join Our Community</h3>
-                    <p>Please join our Discord server where you can ask questions and get support, discuss with the organisation team and receive important annoucements.</p>
+                    <p>Please join our Discord server where you can ask questions and get support, discuss with the organization team and receive important announcements.</p>
                     
                     <div class="registration-cta">
                         <a href="https://discord.gg/eH6DN82k4u" class="btn-register" target="_blank">Join Discord Server</a>
@@ -137,22 +135,21 @@
                     
                     <h3>Task</h3>
                     <p><em>Details are subject to change. If you have concerns or suggestions, feel free to discuss them with the organizers in the Discord channel.</em></p>
-                    
-                    <h4>Requirements</h4>
+
                     <p>Each team is required to implement a memory-enhanced agent system as a Docker image. The memory component may be implemented using any suitable approach.
-                    
+
                     <h4>Benchmark</h4>
-                    <p>We will evaluate the system on a subset of the <a href="https://huggingface.co/datasets/ScaleAI/SWE-bench_Pro" target="_blank">SWE-Bench Pro</a> benchmark, containing <strong>200 instances</strong>: 8 projects x 25 instances per project. We will evaluate each instance in a project sequentially, following the order of commit time.</p>
-                    
+                    <p>We will evaluate the system on a subset of the <a href="https://huggingface.co/datasets/ScaleAI/SWE-bench_Pro" target="_blank">SWE-Bench Pro</a> benchmark, containing <b>200 instances</b>: 8 projects x 25 instances per project. We will evaluate each instance in a project sequentially, following the order of commit time.</p>
+
                     <h4>Available Resources</h4>
-                    <p>Your agent has access to the following resources:</p>
+                    <p>Your agent has access to the following resources.</p>
                     <ul>
                         <li>The natural language description of the issue (the repo, repo_language, problem_statement, requirements, and interface fields in the SWE-Bench Pro benchmark)</li>
                         <li>A Docker container of the checked-out repository, connectable via SSH</li>
                         <li>An OpenAI-compatible LLM service to call various LLMs</li>
                         <li>A writable shared directory, mounted to your Docker container, so that the system can persist memories across all instances within the same project</li>
                     </ul>
-                    
+
                     <h4>Available LLMs</h4>
                     <p>Your agent system is prohibited from using the Internet or GPU. Therefore, it can only access the LLMs provided by our service, including:</p>
                     <ul>
@@ -162,25 +159,22 @@
                         <li>DeepSeek 3.2</li>
                     </ul>
                     <p><em>This list is subject to change. Contact us via Discord to suggest more models.</em></p>
-                    
-                    <h4>Budget Constraints</h4>
-                    <p>Your agent is granted a global quota of <strong>$200</strong> across all 200 instances, capped at <strong>$2</strong> for each individual instance. LLM calls will fail if the system reaches either quota. You can query the remaining quota with APIs.</p>
-                    
-                    <h3>Evaluation</h3>
-                    <p>All submitted systems will be evaluated using a shared benchmark suite provided by the organizers, consisting of representative multi-step software engineering tasks that benefit from long-term context.</p>
-                    
-                    <p>The evaluation will focus on several complementary dimensions:</p>
+
+                    <p>Your agent is granted a global quota of <b>$200</b> across all 200 instances, capped at <b>$2</b> for each individual instance. LLM calls will fail if the system reaches either quota. You can query the remaining quota with APIs.</p>
+
+                    <h4>Evaluation Criteria</h4>
+                    <p>We will rank each team based on several complementary criteria:</p>
                     <ul>
-                        <li><strong>Task Success Rate</strong> - Percentage of successfully completed tasks</li>
-                        <li><strong>Efficiency</strong> - Token usage and turns</li>
-                        <li><strong>Memory Utility</strong> - Difference in task success rate with or without memories</li>
-                        <li><strong>Technical Contribution</strong> - As voted by the competition jury</li>
+                        <li><b>Task Success Rate</b> - Percentage of successfully completed tasks</li>
+                        <li><b>Efficiency</b> - Token usage and turns</li>
+                        <li><b>Memory Utility</b> - Difference in task success rate with or without memories</li>
+                        <li><b>Technical Contribution</b> - As voted by the competition jury</li>
                     </ul>
                     
-                    <p>We will rank each team based on the task success rate, efficiency, memory utility (as measured by the difference in task success rate with or without memories), and technical contribution (as voted by the competition jury). Selected teams will be invited to present their work during a dedicated session at FSE-AIWare 2026.</p>
+                    <p>Selected teams will be invited to present their work during a dedicated session at FSE-AIWare 2026.</p>
                     
                     <h3>Submission</h3>
-                    
+
                     <h4>Paper Submission</h4>
                     <p>Each participating team must submit a paper describing:</p>
                     <ul>
@@ -190,12 +184,13 @@
                         <li>Integration of memory into the assistant</li>
                         <li>Empirical evaluation demonstrating the impact of memory</li>
                     </ul>
+
+                    <p>Papers will follow the standard FSE formatting guidelines and will not be double-blind. The main approach presented in the paper can be published before or in a paper review process.</p>
                     
                     <h4>System Submission</h4>
-                    <p>Teams must provide a Docker image of their system, which will be automatically evaluated by the organizers.</p>
 
-                    <h4>Format</h4>
-                    <p>Papers will follow the standard FSE formatting guidelines and will not be double-blind. The main approach presented in the paper can be published before or in a paper review process.</p>
+                    <p>Each participating team must provide a Docker image of their system, which will be automatically evaluated by the organizers.</p>
+                    <p>We will publish the technical instruction for system submission soon.</p>
                     
                     <h4>Proceedings</h4>
                     <p>The competition proceedings are planned for inclusion in the ACM Digital Library. At least one author of each accepted paper must register for the conference in order for the paper to appear in the proceedings.</p>

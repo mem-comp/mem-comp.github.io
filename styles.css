@@ -21,6 +21,7 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
+    hyphens: auto;
 }
 
 a {
@@ -112,11 +113,13 @@ a:hover {
 
 .person-cards {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
 .person-card {
+    flex-basis: calc(50% - .6rem);
+    box-sizing: border-box;
     padding: 1rem;
     background: var(--background-color);
     border: 1px solid var(--border-color);
@@ -135,9 +138,8 @@ a:hover {
     min-width: 0;
 }
 
-.person-info h3 {
-    font-size: 0.95rem;
-    color: var(--text-color);
+.person-info .name {
+    font-weight: bold;
     margin-bottom: 0.25rem;
 }
 
@@ -215,6 +217,7 @@ a:hover {
     padding: 2rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
     display: none;
+    text-align: justify;
 }
 
 .panel.active {
@@ -223,7 +226,7 @@ a:hover {
 
 @keyframes panel-fade-out {
     from {opacity: 1; transform: translateY(0);}
-    to {opacity: 0; transform: translateY(12px) scaleX(.9);}
+    to {opacity: 0; transform: translateY(12px) scaleX(.95);}
 }
 @keyframes panel-fade-in {
     from {opacity: 0; transform: translateY(-4px);}
@@ -269,9 +272,8 @@ a:hover {
     margin-bottom: 1rem;
 }
 
-.panel p {
+p {
     margin-bottom: 1rem;
-    color: var(--text-color);
 }
 
 .panel ul {
@@ -348,7 +350,6 @@ a:hover {
 }
 
 .registration-cta {
-    text-align: center;
     padding: 2rem;
     /*background: var(--background-color);*/
     border-radius: 12px;
@@ -356,8 +357,9 @@ a:hover {
 }
 
 .btn-register {
+    text-align: center;
     display: block;
-    padding: 1rem 2rem;
+    padding: .75rem 0;
     background: var(--primary-color);
     color: white;
     text-decoration: none;
@@ -456,11 +458,7 @@ a:hover {
     .sidebar-section {
         padding: 1rem;
     }
-    
-    .person-card {
-        padding: 0.75rem;
-    }
-    
+
     .photo-placeholder {
         width: 50px;
         height: 50px;

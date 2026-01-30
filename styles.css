@@ -184,14 +184,14 @@ a:hover {
 
 .nav-btn {
     padding: 0.75rem 1.25rem;
-    border: none;
-    background: var(--background-color);
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
     color: var(--text-color);
     font-size: 0.95rem;
     font-weight: 500;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color var(--transition-speed);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 .nav-btn:hover {

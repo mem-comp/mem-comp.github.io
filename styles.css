@@ -200,9 +200,9 @@ a:hover {
 }
 
 .nav-btn.active {
-    background: var(--primary-color);
+    background: var(--text-color);
     color: white;
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .panels-container {
@@ -287,7 +287,7 @@ p {
 }
 
 .panel em {
-    opacity: .75;
+    opacity: .7;
 }
 
 .panel strong {

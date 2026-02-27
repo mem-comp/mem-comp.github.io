@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intelligent Coding Assistant Enhanced with Memory - FSE-AIWare 2026</title>
-    <link rel="stylesheet" href="styles.css?t=0130v3">
+    <link rel="stylesheet" href="styles.css?t=0226v1">
 </head>
 <body>
     <header class="header">
@@ -39,6 +39,10 @@
             <section class="sidebar-section">
                 <h2>News</h2>
                 <ul class="dates-list">
+                    <li>
+                        <span class="date-label">The list of available LLMs is updated in the Participation <a href="#participation">[🔗]</a> tab.</span>
+                        <span class="date-value">February 27, 2026</span>
+                    </li>
                     <li>
                         <span class="date-label">The registration site <a href="https://mem-comp26.hotcrp.com/" target="_blank">[🔗]</a> and technical specification <a href="https://github.com/mem-comp/mem-comp-26" target="_blank">[🔗]</a> are online.</span>
                         <span class="date-value">January 30, 2026</span>
@@ -124,16 +128,45 @@
                     </ul>
 
                     <h4>Available LLMs</h4>
-                    <p>Your agent system is prohibited from using the Internet or GPU. Therefore, it can only access the LLMs provided by our service, including:</p>
-                    <ul>
-                        <li>GPT 5.2 Codex</li>
-                        <li>Gemini 3 Pro</li>
-                        <li>GLM 4.7</li>
-                        <li>DeepSeek 3.2</li>
-                    </ul>
-                    <p><em>This list is subject to change. Contact us via Discord to suggest more models.</em></p>
+                    <p>Your agent system is prohibited from using the Internet or GPU. It can only access the LLMs provided by our service:</p>
+                    <table class="llm-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Cached Input ($/M)</th>
+                                <th>Input ($/M)</th>
+                                <th>Output ($/M)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>gpt-5.2</td>
+                                <td>0.175</td>
+                                <td>1.75</td>
+                                <td>14</td>
+                            </tr>
+                            <tr>
+                                <td>gemini-2.5-pro</td>
+                                <td>0.125</td>
+                                <td>1.25</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>glm-4.7</td>
+                                <td>0.11</td>
+                                <td>0.6</td>
+                                <td>2.2</td>
+                            </tr>
+                            <tr>
+                                <td>deepseek-v3.2</td>
+                                <td>0.028</td>
+                                <td>0.28</td>
+                                <td>0.42</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                    <p>Your agent is granted a global quota of <b>$200</b> across all 200 instances, capped at <b>$2</b> for each individual instance. LLM calls will fail if the system reaches either quota. You can query the remaining quota with APIs.</p>
+                    <p>The agent is granted a global quota of <b>$200</b> across all 200 instances, capped at <b>$2</b> for each individual instance. LLM calls will fail if the system reaches either quota. You can query the remaining quota with APIs.</p>
 
                     <h4>Evaluation Criteria</h4>
                     <p>We will rank each team based on several complementary criteria:</p>

@@ -398,3 +398,24 @@ p {
         padding: 0.75rem;
     }
 }
+
+.llm-table {
+    border: 1px solid var(--border-color);
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.llm-table td:first-child {
+    font-family: Consolas, monospace;
+}
+
+.llm-table td, .llm-table th {
+    border-top: 1px solid var(--border-color);
+    padding: .35em .5em;
+    text-align: left;
+}
+
+.llm-table tr:hover {
+    background: var(--background-color);
+}
